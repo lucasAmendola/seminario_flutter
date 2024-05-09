@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 class CounterFunctionsScreen extends StatefulWidget {
@@ -21,21 +24,25 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
 
     // ignore: prefer_const_constructors
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 226, 178, 1),
       appBar: AppBar(
         title: const Text('Counter Functions'),
+        
+        backgroundColor: Colors.blue,
+        
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: layout,
           children: [
             Text('$clickCounter', 
-                   style: const TextStyle( fontSize: 160, fontWeight: FontWeight.w100),),
+                   style: const TextStyle( fontSize: 160, fontWeight: FontWeight.w100, fontFamily: Unicode.LRM),),
             
             if( clickCounter == 1)
-            Text('Click', style: TextStyle( fontSize: 25,)),
+            Text('Click', style: TextStyle( fontSize: 25, fontFamily: Unicode.LRM)),
 
             if( clickCounter > 1 || clickCounter == 0)
-            Text('Clicks', style: TextStyle( fontSize: 25,))
+            Text('Clicks', style: TextStyle( fontSize: 25, fontFamily: Unicode.LRM))
           ],
         ),
       ),
