@@ -24,7 +24,6 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
 
     // ignore: prefer_const_constructors
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 226, 178, 1),
       appBar: AppBar(
         title: const Text('Counter Functions'),
         
@@ -36,13 +35,13 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
           mainAxisAlignment: layout,
           children: [
             Text('$clickCounter', 
-                   style: const TextStyle( fontSize: 160, fontWeight: FontWeight.w100, fontFamily: Unicode.LRM),),
+                   style: const TextStyle( fontSize: 160, fontWeight: FontWeight.w100),),
             
             if( clickCounter == 1)
-            Text('Click', style: TextStyle( fontSize: 25, fontFamily: Unicode.LRM)),
+            Text('Click', style: TextStyle( fontSize: 25)),
 
             if( clickCounter > 1 || clickCounter == 0)
-            Text('Clicks', style: TextStyle( fontSize: 25, fontFamily: Unicode.LRM))
+            Text('Clicks', style: TextStyle( fontSize: 25))
           ],
         ),
       ),
