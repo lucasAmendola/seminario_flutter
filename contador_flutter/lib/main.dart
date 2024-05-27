@@ -1,5 +1,7 @@
+import 'package:contador_flutter/screens/namer_app.dart';
 import 'package:flutter/material.dart';
 import 'package:contador_flutter/screens/counter_functions_screen.dart';
+import 'package:provider/provider.dart';
 
 void main(){
   runApp(const MyApp());
@@ -8,18 +10,21 @@ void main(){
 class MyApp extends StatelessWidget{
   
   const MyApp({super.key});
-
   
   @override
   Widget build(BuildContext context) {
-      return  MaterialApp(
+ return ChangeNotifierProvider(
+      create: (context) => MyAppState(),
+      child: MaterialApp(
         debugShowCheckedModeBanner: false,
+        title: 'Namer App',
         theme: ThemeData(
           useMaterial3: true,
-          colorSchemeSeed: Color.fromARGB(255, 166, 0, 255),
+          colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 255, 75, 75)),
         ),
-        home: const CounterFunctionsScreen()  
-      );
+        home: const MyHomePage(),
+      ),
+    );
   }
   
 }

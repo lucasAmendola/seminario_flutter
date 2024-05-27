@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:english_words/english_words.dart';
+import 'package:provider/provider.dart';
+
 
 class CounterFunctionsScreen extends StatefulWidget {
   
@@ -107,12 +110,13 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
     setState(() {
       layout = nextEnumLayout(layout);
     });
-}
+  }
 
-MainAxisAlignment nextEnumLayout(MainAxisAlignment value){
-  final nextIndex = (value.index + 1) % MainAxisAlignment.values.length;
-  return MainAxisAlignment.values[nextIndex]; 
-}
+  MainAxisAlignment nextEnumLayout(MainAxisAlignment value){
+    final nextIndex = (value.index + 1) % MainAxisAlignment.values.length;
+    return MainAxisAlignment.values[nextIndex]; 
+  }
+
 }
 
 
@@ -135,3 +139,5 @@ final VoidCallback? onPressed;
     );
   }
 }
+
+
